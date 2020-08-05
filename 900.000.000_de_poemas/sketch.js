@@ -51,7 +51,7 @@ function setup() {
   radio_label.position(15,10);
 
   radio = createRadio();
-  radio.option('automático');
+  radio.option('automático<br>');
   radio.option('manual');
   radio.style('width', '130px');
   radio.selected("automático");
