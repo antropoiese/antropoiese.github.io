@@ -176,7 +176,7 @@ function mouseClicked() {
   if (val == "manual"){
     width_text1 = textWidth(verbo1);
     x1 = canvasWidth / 2;
-    y1 = 200;
+    y1 = 160;
     if (mouseX > x1 - width_text1/2 && mouseX < x1 + width_text1/2  && mouseY > y1 - fontsize/2 && mouseY < y1 + fontsize/2){
       tempo_random_1 = tempos[Math.floor(Math.random() * tempos.length)];
       verbo_random_1 = keys[Math.floor(Math.random() * keys.length)];
@@ -187,7 +187,7 @@ function mouseClicked() {
 
     width_text2 = textWidth(verbo2);
     x2 = canvasWidth / 2;
-    y2 = 400;
+    y2 = 360;
     if (mouseX > x2 - width_text2/2 && mouseX < x2 + width_text2/2  && mouseY > y2 - fontsize/2 && mouseY < y2 + fontsize/2){
       tempo_random_2 = tempos[Math.floor(Math.random() * tempos.length)];
       verbo_random_2 = keys[Math.floor(Math.random() * keys.length)];
