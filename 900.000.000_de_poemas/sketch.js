@@ -43,18 +43,21 @@ function setup() {
   tempo_random_2 = tempos[Math.floor(Math.random() * tempos.length)];
   verbo_random_2 = keys[Math.floor(Math.random() * keys.length)];
 
-  verbo1 = verbos[verbo_random_1][tempo_random_2][0]
-  verbo2 = verbos[verbo_random_2][tempo_random_1][2]
+  //tempo_random_1 = "Presente";
+  //verbo_random_1 = "declamar";
+
+  verbo1 = verbos[verbo_random_1][tempo_random_1][0]
+  verbo2 = verbos[verbo_random_2][tempo_random_2][2]
 
 
   radio_label = createElement("p", "Modo:");
-  radio_label.position(15,10);
+  radio_label.position(0,10);
 
   radio = createRadio();
   radio.option('automático');
   radio.option('manual');
   radio.style('width', '130px');
-  radio.selected("automático");
+  //radio.selected("automático");
   radio.position(10,50);
   fill(255, 0, 0);
 
@@ -81,7 +84,36 @@ function draw() {
   background(255,181,42)
   val = radio.value();
 
+  if (val != "manual" && val != "automático"){
+    textAlign(LEFT);
+    div = createDiv("<h2>900 milhões de poemas</h2><br><p>Poema/experimento de proliferação polissêmica.</p><p>O experimento efetua aleatoriamente a permuta de verbos, alterando os sentidos, <br>implodindo as relações de significado e proliferando as recombinações semânticas.</p><br><p>São 5.000 verbos conjugados em seus 6 tempos verbais do modo Indicativo.</p><p>30 mil possibilidades por estrofe resultando em 900 milhões de variações do poema.</p><br><p>Há dois modos de funcionamento:</p><p>No modo manual cada verbo é individualmente trocado ao clicar sobre ele.</p><p>No modo autômato os verbos são trocados automaticamente em dado intervalo de tempo.</p><br><p>Altere o modo no seletor ao lado.</p><br><br><div class='span_div'><span>antropoiese / 2020<br>AntiCopyRight: Todos os direitos dispersos!</span></div>");
+    div.position(windowWidth / 2 - 400, y)
+    div.class("texto");
+    /*
+    texto = createElement("h2", "900 milhões de poemas");
+    texto.position(windowWidth / 2 - 150, y);
+    texto = createElement("p", "Poema/experimento de proliferação polissêmica.");
+    texto.position(windowWidth / 2 - 370, y+70);
+    texto = createElement("p", "O experimento efetua aleatoriamente a permuta de verbos, alterando os sentidos, <br>implodindo relações de significado e proliferando recombinações semânticas.");
+    texto.position(windowWidth / 2 - 370, y+110);
+    texto = createElement("p", "São 5.000 verbos conjugados em seus 6 tempos verbais do modo Indicativo.");
+    texto.position(windowWidth / 2 - 370, y+180);
+    texto = createElement("p", "30 mil possibilidades por estrofe, 900 milhões de possibilidades no total.");
+    texto.position(windowWidth / 2 - 370, y+210);
+    texto = createElement("p", "Há dois modos de funcionamento:");
+    texto.position(windowWidth / 2 - 370, y+260);
+    texto = createElement("p", "No modo manual cada verbo é individualmente trocado ao clicar sobre ele.");
+    texto.position(windowWidth / 2 - 370, y+290);
+    texto = createElement("p", "No modo autômato os verbos são trocados automaticamente em dado intervalo de tempo.");
+    texto.position(windowWidth / 2 - 370, y+320);*/
+  }
+
   if (val == "manual"){
+    removeElements(); // this will remove the div and p, not canvas
+    radio_label = createElement("p", "Modo:");
+    radio_label.position(0,10);
+
+    textAlign(CENTER, CENTER);
     fill(0);
     text("Eu", canvasWidth / 2, y);
     text("te", canvasWidth / 2, y+50);
@@ -103,7 +135,12 @@ function draw() {
   }
 
   if (val == "automático"){
+    removeElements(); // this will remove the div and p, not canvas
+    radio_label = createElement("p", "Modo:");
+    radio_label.position(0,10);
+
     ra++;
+    textAlign(CENTER, CENTER);
     fill(0);
     text("Eu", canvasWidth / 2, y);
     text("te", canvasWidth / 2, y+50);
@@ -152,6 +189,7 @@ function mouseClicked() {
     if (mouseX > x2 - width_text2/2 && mouseX < x2 + width_text2/2  && mouseY > y2 - fontsize/2 && mouseY < y2 + fontsize/2){
       tempo_random_2 = tempos[Math.floor(Math.random() * tempos.length)];
       verbo_random_2 = keys[Math.floor(Math.random() * keys.length)];
+      //tempo_random_2 = "Presente";
       verbo2 = verbos[verbo_random_2][tempo_random_2][2]
       //verbo2 = verbos['latir'][tempo_random_2][2]
     }
