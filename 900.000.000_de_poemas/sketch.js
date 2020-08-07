@@ -54,17 +54,35 @@ function setup() {
   radio_label.position(0,10);
 
   radio = createRadio();
-  radio.option('automático');
-  radio.option('manual');
+  r1 = radio.option('automático');
+  r2 = radio.option('manual');
   radio.style('width', '130px');
+  radio.class("radios");
+
   //radio.selected("automático");
   radio.position(10,50);
   fill(255, 0, 0);
 
+  encloseEachInputLabelPairIntoASubDiv(radio);
+  fixRadioDivElement(radio);
+
   startT=millis();
 
 }
+function encloseEachInputLabelPairIntoASubDiv(radioDivElement) {
+  const inputs = selectAll('input', radioDivElement),
+        labels = selectAll('label', radioDivElement),
+        len = inputs.length;
 
+  for (let i = 0; i < len; ++i)
+    createDiv().parent(radioDivElement).child(inputs[i]).child(labels[i]);
+}
+
+function fixRadioDivElement(radioDivP5Element) {
+  radioDivP5Element._getInputChildrenArray = function () {
+    return this.elt.getElementsByTagName('input');
+  }
+}
 function myTimer() {
   if (millis() > startT + deltaT) {
     startT = millis()
