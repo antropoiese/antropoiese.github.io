@@ -1,6 +1,6 @@
 let verbos;
 let font,
-  fontsize = 48;
+  fontsize = 40;
 let y = 60
 let keys;
 let random;
@@ -26,12 +26,12 @@ function preload() {
 function setup() {
   // put setup code here
   canvasWidth = windowWidth;
-  canvasHeight = windowHeight;
+  //canvasHeight = windowHeight;
   //canvasWidth = 480;
-  //canvasHeight = 480;
+  canvasHeight = 480;
 
   let cnv = createCanvas(canvasWidth, canvasHeight);
-  cnv.position(windowWidth/2-canvasWidth/2, 0);
+  cnv.position(windowWidth/2-canvasWidth/2, 80);
   keys = Object.keys(verbos)
   textFont(font);
   textSize(fontsize);
