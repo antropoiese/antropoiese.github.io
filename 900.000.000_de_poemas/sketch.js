@@ -1,6 +1,6 @@
 let verbos;
 let font,
-  fontsize = 48;
+  fontsize = 40;
 let y = 60
 let keys;
 let random;
@@ -25,13 +25,13 @@ function preload() {
 
 function setup() {
   // put setup code here
-  //canvasWidth = windowWidth;
+  canvasWidth = windowWidth;
   //canvasHeight = windowHeight;
-  canvasWidth = 480;
+  //canvasWidth = 480;
   canvasHeight = 480;
 
   let cnv = createCanvas(canvasWidth, canvasHeight);
-  cnv.position(windowWidth/2-canvasWidth/2, 100);
+  cnv.position(windowWidth/2-canvasWidth/2, 80);
   keys = Object.keys(verbos)
   textFont(font);
   textSize(fontsize);
@@ -50,8 +50,9 @@ function setup() {
   verbo2 = verbos[verbo_random_2][tempo_random_2][2]
 
 
-  radio_label = createElement("p", "Modo:");
-  radio_label.position(0,10);
+  radio_label = createElement("p", "<b>Modo</b>:");
+  radio_label.position(0,0);
+  radio_label.class("label");
 
   radio = createRadio();
   radio.option('automático');
@@ -60,7 +61,7 @@ function setup() {
   radio.class("radios");
 
   //radio.selected("automático");
-  radio.position(10,50);
+  radio.position(10,30);
   fill(255, 0, 0);
 
   startT=millis();
@@ -88,8 +89,8 @@ function draw() {
 
   if (val != "manual" && val != "automático"){
     textAlign(LEFT);
-    div = createDiv("<h2>900 milhões de poemas</h2><p>Poema/experimento de proliferação polissêmica.</p><p>O experimento efetua aleatoriamente a permuta de verbos, alterando os sentidos, implodindo as relações de significado e proliferando as recombinações semânticas.</p><p>São 5.000 verbos conjugados em seus 6 tempos verbais do modo Indicativo.</p><p>30 mil possibilidades por estrofe resultando em <br>900 milhões de variações do poema.</p><p>Há dois modos de funcionamento:</p><p>No modo manual cada verbo é individualmente trocado ao clicar sobre ele.</p><p>No modo autômato os verbos são trocados automaticamente em dado intervalo de tempo.</p><p>Altere o modo no seletor ao lado.</p><br><div class='span_div'><span>antropoiese / 2020<br>AntiCopyRight: Todos os direitos dispersos!</span></div>");
-    div.position(windowWidth / 2 - 240, y+30)
+    div = createDiv("<h2>900 milhões de poemas</h2><p>Poema/experimento de proliferação polissêmica.</p><p>O experimento efetua aleatoriamente a permuta de verbos, alterando os sentidos, implodindo as relações de significado e proliferando as recombinações semânticas.</p><p>São 5.000 verbos conjugados em seus 6 tempos verbais do modo Indicativo.</p><p>30 mil possibilidades por estrofe resultando em 900 milhões de variações do poema.</p><p>Há dois modos de funcionamento:</p><p>No modo manual cada verbo é individualmente trocado ao clicar sobre ele.</p><p>No modo autômato os verbos são trocados automaticamente em dado intervalo de tempo.</p><p>Altere o modo no seletor ao lado.</p><div class='span_div'><span>antropoiese / 2020<br>AntiCopyRight: Todos os direitos dispersos!</span></div>");
+    div.position(windowWidth / 2 - 160, y+30)
     div.class("texto");
     /*
     texto = createElement("h2", "900 milhões de poemas");
@@ -112,8 +113,9 @@ function draw() {
 
   if (val == "manual"){
     removeElements(); // this will remove the div and p, not canvas
-    radio_label = createElement("p", "Modo:");
-    radio_label.position(0,10);
+    radio_label = createElement("p", "<b>Modo</b>:");
+    radio_label.position(0,0);
+    radio_label.class("label");
 
     textAlign(CENTER, CENTER);
     fill(0);
@@ -138,8 +140,9 @@ function draw() {
 
   if (val == "automático"){
     removeElements(); // this will remove the div and p, not canvas
-    radio_label = createElement("p", "Modo:");
-    radio_label.position(0,10);
+    radio_label = createElement("p", "<b>Modo</b>:");
+    radio_label.position(0,0);
+    radio_label.class("label");
 
     ra++;
     textAlign(CENTER, CENTER);
