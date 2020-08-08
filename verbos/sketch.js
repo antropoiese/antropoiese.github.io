@@ -90,7 +90,7 @@ function draw() {
   if (val != "manual" && val != "automático"){
     textAlign(LEFT);
     div = createDiv("<h2>900 milhões de poemas</h2><p>Poema/experimento de proliferação polissêmica.</p><p>O experimento efetua aleatoriamente a permuta de verbos, alterando os sentidos, implodindo as relações de significado e proliferando as recombinações semânticas.</p><p>São 5.000 verbos conjugados em seus 6 tempos verbais do modo Indicativo.</p><p>30 mil possibilidades por estrofe resultando em <br>900 milhões de variações do poema.</p><p>Há dois modos de funcionamento:</p><p>No modo manual cada verbo é individualmente trocado ao clicar sobre ele.</p><p>No modo autômato os verbos são trocados automaticamente em dado intervalo de tempo.</p><p>Altere o modo no seletor ao lado.</p><div class='span_div'><span>antropoiese / 2020<br>AntiCopyRight: Todos os direitos dispersos!</span></div>");
-    div.position(windowWidth / 2 - 240, y+30)
+    div.position(windowWidth / 2 - 160, y+30)
     div.class("texto");
     /*
     texto = createElement("h2", "900 milhões de poemas");
