@@ -20,8 +20,8 @@ function setup() {
   font = loadFont('fonts/Kingthings Trypewriter 2.ttf');
     //texto();
 
-  div = createDiv("<h2>Quarenta quatrilhões de variações.</h2><br><p>Experimento combinatório com a canção Construção, de Chico Buarque.</p><p>São 20 finais possíveis para 17 versos.</p><p>O resultando totaliza 40.548.366.8029.440.000 variações da canção.</p><p>A cada clique, uma nova recombinação...</p><br><p>Clique para iniciar</p><br><br><br><br><br><br><br><div class='span_div'><span>antropoiese / 2020<br>AntiCopyRight: Todos os direitos dispersos!</span></div>");
-  div.position(0, 50)
+  div = createDiv("<h2>Quarenta quatrilhões de reConstruções.</h2><br><p>Experimento combinatório com a canção Construção, de Chico Buarque.</p><p>São 20 finais possíveis para 17 versos, resultando em um total de 40.548.366.8029.440.000 de variações da canção.</p><p>A cada clique, uma nova recombinação...</p><br><p>Clique para iniciar</p><br><br><br><br><br><br><br><div class='span_div'><span>antropoiese / 2020<br>AntiCopyRight: Todos os direitos dispersos!</span></div>");
+  div.position(windowWidth / 2 - 210, 10)
   div.class("texto");
 }
 
@@ -33,7 +33,7 @@ function texto(){
   removeElements(); // this will remove the div and p, not canvas
   background("#ffb52a");
   palavras = shuffle(palavras);
-  //textFont(font);
+  textFont(font);
   textSize(15);
   textAlign(LEFT);
   fill(0);
